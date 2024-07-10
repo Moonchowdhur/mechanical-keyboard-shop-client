@@ -3,6 +3,7 @@ import CustomerReview from "./CustomerReview";
 import FeatureBarands from "./FeatureBarands";
 import FeaturedProducts from "./FeaturedProducts";
 import KeyboardImportance from "./KeyboardImportance";
+import Sell from "./Sell";
 import ServiceAdvertisement from "./ServiceAdvertisement";
 
 const Home = () => {
@@ -12,8 +13,9 @@ const Home = () => {
       <ServiceAdvertisement />
       <FeaturedProducts />
       <FeatureBarands />
-      <CustomerReview/>
-      <KeyboardImportance/>
+      <CustomerReview />
+      <KeyboardImportance />
+      <Sell />
     </div>
   );
 };
