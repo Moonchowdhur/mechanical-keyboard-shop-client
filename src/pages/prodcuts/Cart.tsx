@@ -9,27 +9,33 @@ import {
 } from "@/components/ui/table";
 import SingleCart from "./SingleCart";
 import { useNavigate } from "react-router-dom";
+import { useGetProductsQuery } from "@/redux/api/baseApi";
+import { useEffect, useState } from "react";
 
 const Cart = () => {
   const cartItems = useAppSelector((state) => state.cart.items);
+  const { data: products, isLoading } = useGetProductsQuery(undefined);
   const { totalOrderPrice } = useAppSelector((state) => state.cart);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
   const navigate = useNavigate();
-  const handleProceedCheckout = () => {
+
+  useEffect(() => {
+    if (isLoading) return;
+
     // Check stock availability
-    const outOfStockItems = cartItems.filter((item) => item.quantity <= 0);
+    const outOfStockItems = cartItems.filter((cartItem) => {
+      const product = products.data.find(
+        (item: any) => item._id === cartItem._id
+      );
+      return product ? cartItem.quantity > product.quantity : true;
+    });
 
-    if (outOfStockItems.length > 0) {
-      // if any item is out of stock
+    setIsButtonDisabled(outOfStockItems.length > 0);
+  }, [cartItems, products, isLoading]);
 
-      swal({
-        title: "Out of Stock",
-        text: "One or more items in your cart are out of stock.",
-        icon: "error",
-      });
-    } else {
-      // Navigate to the checkout page if all items are in stock
-      navigate("/checkout");
-    }
+  const handleProceedCheckout = () => {
+    navigate("/checkout");
   };
 
   return (
@@ -88,7 +94,12 @@ const Cart = () => {
         <div className="text-end mx-auto mt-4">
           <button
             onClick={handleProceedCheckout}
-            className="text-white text-lg font-medium mx-auto rounded px-3 py-2  bg-[#736100]"
+            className={`text-white text-lg font-medium mx-auto rounded px-3 py-2 bg-[#736100] ${
+              isButtonDisabled
+                ? "opacity-50 bg-gray-300 cursor-not-allowed"
+                : ""
+            }`}
+            disabled={isButtonDisabled ? true : false}
           >
             Proceed To Checkout{" "}
           </button>

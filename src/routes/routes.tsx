@@ -9,6 +9,7 @@ import SingleProduct from "@/pages/prodcuts/SingleProduct";
 import AllProduct from "@/pages/prodcuts/AllProduct";
 import Cart from "@/pages/prodcuts/Cart";
 import CheckOut from "@/pages/CheckOut";
+import OrderConfirmed from "@/pages/OrderConfirmed";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "/checkout",
         element: <CheckOut />,
+      },
+      {
+        path: "/orderconfirmed",
+        element: <OrderConfirmed />,
       },
     ],
   },

@@ -24,7 +24,11 @@ const FeaturedProducts = () => {
   return (
     <div className="md:px-12 w-full   p-4 mt-16 rounded-md ">
       <div className="text-3xl mb-2 font-bold text-center">
-        WELCOME TO OUR <span className="text-[#4A249D]"> PRODCUTS</span>
+        <h2 className="text-3xl mb-2 font-bold text-center">
+          {" "}
+          WELCOME TO OUR <span className="text-[#4A249D]"> PRODCUTS</span>
+        </h2>
+
         <div className="flex justify-center mt-2">
           <div className="h-2 w-12  rounded-lg text-center bg-[#4A249D]"></div>
         </div>

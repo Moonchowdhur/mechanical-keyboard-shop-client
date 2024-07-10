@@ -1,5 +1,8 @@
 import CarouselImage from "./CarouselImage";
+import CustomerReview from "./CustomerReview";
+import FeatureBarands from "./FeatureBarands";
 import FeaturedProducts from "./FeaturedProducts";
+import KeyboardImportance from "./KeyboardImportance";
 import ServiceAdvertisement from "./ServiceAdvertisement";
 
 const Home = () => {
@@ -7,7 +10,10 @@ const Home = () => {
     <div>
       <CarouselImage></CarouselImage>
       <ServiceAdvertisement />
-      <FeaturedProducts/>
+      <FeaturedProducts />
+      <FeatureBarands />
+      <CustomerReview/>
+      <KeyboardImportance/>
     </div>
   );
 };
