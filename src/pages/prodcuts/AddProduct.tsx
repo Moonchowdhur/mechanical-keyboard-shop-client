@@ -26,7 +26,14 @@ const AddProduct = () => {
   const [rating, setRating] = useState("");
   const [description, setDescription] = useState("");
 
-  console.log({ data, error, isSuccess, isLoading });
+  let errorMessage: string | null = null;
+  // @ts-expect-error: Unreachable code error
+  if (error?.data?.message) {
+    // @ts-expect-error: Unreachable code error
+    errorMessage = error.data.message;
+  }
+
+  console.log({ data, isSuccess, errorMessage, isLoading });
 
   const onSubmit = (e: any) => {
     e.preventDefault();
@@ -46,9 +53,9 @@ const AddProduct = () => {
       description,
     };
 
-    console.log(data);
     addProduct(data);
-    if (data) {
+    // @ts-expect-error: Unreachable code error
+    if (data?.success === true) {
       swal({
         title: "Product added!",
         text: "Successfull",
@@ -66,6 +73,14 @@ const AddProduct = () => {
           Add todo
         </button>
       </DialogTrigger>
+
+      <div className="flex mx-1 justify-center ">
+        {errorMessage && (
+          <h2 className="text-center  text-xl font-medium text-red-600">
+            Error:{errorMessage}, Please give valid input
+          </h2>
+        )}
+      </div>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Add Product</DialogTitle>

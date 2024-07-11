@@ -87,6 +87,9 @@ const CustomerReview = () => {
                   className="min-w-full  flex justify-center p-4"
                 >
                   <div className="bg-[#dbd3eb]  rounded-lg shadow-lg p-6 flex flex-col items-center">
+                    <div className="flex w-full justify-start mb-5 ">
+                      <img src="https://i.ibb.co/4K88pCD/quotes.png" className="w-7 h-7" alt="" />
+                    </div>
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
@@ -98,6 +101,9 @@ const CustomerReview = () => {
                     <p className="text-gray-600 text-center">
                       {testimonial.review}
                     </p>
+                    <div className="flex w-full justify-end mt-5 ">
+                      <img src="https://i.ibb.co/pRQRCWf/quote.png" className="w-9 h-9" alt="" />
+                    </div>
                   </div>
                 </div>
               ))}
@@ -105,7 +111,7 @@ const CustomerReview = () => {
           </div>
           <button
             onClick={handlePrev}
-            className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-[#957c00] text-white rounded-full px-5 p-4"
+            className="absolute top-1/2  left-0 transform -translate-y-1/2 bg-[#957c00] text-white rounded-full px-5 p-4"
           >
             &#8592;
           </button>

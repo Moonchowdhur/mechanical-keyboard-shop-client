@@ -21,7 +21,7 @@ const SortByPriceProduct = ({ onSortChange }: any) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="border w-2/12 px-4 py-2 mt-3 rounded-lg hover:bg-[#4A249D] hover:text-white border-[#4A249D] text-lg font-medium ">
+        <button className="border md:w-2/12 px-4 py-2 mt-3 rounded-lg hover:bg-[#4A249D] hover:text-white border-[#4A249D] text-lg font-medium ">
           Sort By Price
         </button>
       </DropdownMenuTrigger>

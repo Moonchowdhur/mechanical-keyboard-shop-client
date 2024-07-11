@@ -63,21 +63,13 @@ export const baseApi = createApi({
       },
       invalidatesTags: ["products"],
     }),
-    // updateQuantity: builder.mutation({
-    //   query: ({ id, data }) => ({
-    //     url: `/product/quantity/${id}`,
-    //     method: "PUT",
-    //     body: data,
-    //   }),
-    //   invalidatesTags: ["products"],
-    // }),
-    updateQuantities: builder.mutation({
-      query: (updates) => {
-        console.log("updates api==>", updates.updates);
+    addOrders: builder.mutation({
+      query: (order) => {
+        console.log("saving data==>", order);
         return {
-          url: "/product/quantity",
-          method: "PUT",
-          body: updates,
+          url: "/order/create-order",
+          method: "POST",
+          body: order,
         };
       },
       invalidatesTags: ["products"],
@@ -91,5 +83,5 @@ export const {
   useAddProductMutation,
   useDeleteProductMutation,
   useUpdateSingleProductMutation,
-  useUpdateQuantitiesMutation,
+  useAddOrdersMutation
 } = baseApi;

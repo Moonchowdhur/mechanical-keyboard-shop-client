@@ -38,9 +38,18 @@ const UpdateProduct = ({ product }: any) => {
   const [rating, setRating] = useState("");
   const [description, setDescription] = useState("");
 
-  console.log({ data, error, isSuccess, isLoading });
 
-  console.log(ttl, img, brandy, quanti, pri, rati, desc);
+  console.log({ data, error, isSuccess, isLoading });
+  let errorMessage: string | null = null;
+  // @ts-expect-error: Unreachable code error
+  if (error?.data?.message) {
+    // @ts-expect-error: Unreachable code error
+    errorMessage = error.data.message;
+  }
+
+  console.log({ errorMessage });
+
+
 
   const onSubmit = (e: any) => {
     e.preventDefault();
@@ -66,7 +75,9 @@ const UpdateProduct = ({ product }: any) => {
 
     console.log(data);
     updateProduct(options);
-    if (data) {
+
+
+    if (data !== undefined) {
       swal({
         title: "Product Updated",
         text: "Successfull",
@@ -84,6 +95,13 @@ const UpdateProduct = ({ product }: any) => {
           <FaPen className="text-white  text-xl" />
         </button>
       </DialogTrigger>
+      <div className="flex mx-1 justify-center ">
+        {errorMessage && (
+          <h2 className="text-center  text-xl font-medium text-red-600">
+            Error:{errorMessage}, Please give valid input
+          </h2>
+        )}
+      </div>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Update Product</DialogTitle>

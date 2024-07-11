@@ -38,9 +38,9 @@ const CarouselImage = () => {
         <CarouselContent>
           {keyboardBrands.map((brand) => (
             <CarouselItem key={brand.name}>
-              <div className="bg-[#dbd3eb] p-4 mt-16 rounded-md flex items-center justify-between">
+              <div className="bg-[#dbd3eb] p-4 mt-16 rounded-md md:flex items-center justify-between">
                 {/* content */}
-                <div className="flex justify-center  md:w-1/2 p-8 w-full ">
+                <div className="md:flex justify-center  md:w-1/2 p-8 w-full ">
                   <div className="w-full">
                     <ul className="flex font-medium mb-2 text-[#695802] items-center gap-3">
                       <li className="text-lg">Simple </li>
@@ -72,10 +72,10 @@ const CarouselImage = () => {
                     </div>
                   </div>
                 </div>
-                <div className="md:w-1/2  w-full p-8  ">
+                <div className="md:w-1/2  w-full md:p-8  ">
                   <img
                     src={brand?.image}
-                    className="rounded-xl w-[600px] h-[400px]"
+                    className="rounded-xl mx-auto w-[300px] h-[300px] md:w-[600px] md:h-[400px]"
                     alt=""
                   />
                 </div>

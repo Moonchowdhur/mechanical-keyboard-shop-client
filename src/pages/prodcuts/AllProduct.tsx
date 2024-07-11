@@ -15,13 +15,13 @@ const AllProduct = () => {
   const [sort, setSort] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
 
-  console.log(searchTerm, sort, filterPrice);
-
   const filters = {
     searchTerm,
     sort,
-    // priceRange: filterPrice,
+    priceRange: filterPrice,
   };
+
+  console.log(filters);
   const { data, isLoading } = useGetProductsQuery(filters);
 
   if (isLoading) {
@@ -38,7 +38,7 @@ const AllProduct = () => {
     <div className="md:px-12 w-full p-4 mt-12 rounded-md ">
       {/* search item */}
       <div className=" pb-10  flex justify-end ">
-        <div className="flex rounded-2xl p-1 w-3/12 items-center bg-[#dbd3eb]  border-[#4A249D]">
+        <div className="flex rounded-2xl p-1 md:w-3/12 items-center bg-[#dbd3eb]  border-[#4A249D]">
           {!searchTerm && <FaSearch className="text-xl mt-1" />}
           <Input
             type="text"
@@ -57,7 +57,7 @@ const AllProduct = () => {
       )}
       {/* filter */}
       <div className="border px-4 justify-between border-[#4A249D] md:flex border-l-0 border-r-0 mt-6 bg-[#ede9f5] pb-6">
-        <div className="w-9/12 flex items-center gap-5">
+        <div className="md:w-9/12 flex items-center gap-5">
           <button
             className="border px-4 py-2 mt-3 rounded-lg hover:bg-[#4A249D] hover:text-white border-[#4A249D] text-lg font-medium "
             onClick={() => {
@@ -69,6 +69,18 @@ const AllProduct = () => {
             Reset
           </button>
           <SortByPriceProduct onSortChange={setSort} />
+          {/* <div className="w-2/12 mt-2">
+            <h2 className="mb-2 text-lg">Filter by price</h2>
+            <Slider
+              // @ts-expect-error: Unreachable code error
+              defaultValue={filterPrice}
+              // @ts-expect-error: Unreachable code error
+              onChange={(value) => setFilterPrice(value)}
+              max={1000}
+              step={1}
+            />
+          </div> */}
+
           <FilterByPriceProduct onFilterChange={setFilterPrice} />
         </div>
         <h2 className="mt-6 mx-4 font-medium text-lg">
@@ -86,7 +98,7 @@ const AllProduct = () => {
                   key={product._id}
                   className="border-gray-200  bg-[#dbd3eb]  border p-4 rounded-lg"
                 >
-                  <Badge className="relative hover:text-white left-80 top-8 text-lg m-2 rounded-full text-black bg-[#F0D133]  ">
+                  <Badge className="relative hover:text-white md:left-80 top-8 text-lg m-2 rounded-full text-black bg-[#F0D133]  ">
                     ${product?.price}
                   </Badge>
                   <img

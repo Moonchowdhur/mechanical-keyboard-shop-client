@@ -18,6 +18,8 @@ const Cart = () => {
   const { totalOrderPrice } = useAppSelector((state) => state.cart);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
+  console.log(isButtonDisabled);
+
   const navigate = useNavigate();
 
   useEffect(() => {

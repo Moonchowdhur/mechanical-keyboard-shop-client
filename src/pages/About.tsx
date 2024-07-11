@@ -102,7 +102,7 @@ const About = () => {
             <div className="bg-[#957c00] text-center h-2 w-11 rounded-lg "></div>
           </div>
           <div className="flex justify-center mt-10">
-            <h2 className="tracking-widest  w-8/12  text-lg text-center   ">
+            <h2 className="md:tracking-widest   md:w-8/12  text-lg text-center   ">
               Our expertise in mechanical keyboards ensures that your
               high-performance peripherals are always in top condition. We
               understand the intricate details and precision required to

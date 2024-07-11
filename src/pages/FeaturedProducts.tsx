@@ -8,7 +8,10 @@ import { NavLink } from "react-router-dom";
 
 const FeaturedProducts = () => {
   const [showAll, setShowAll] = useState(false);
-  const { data, error, isLoading } = useGetProductsQuery(undefined);
+  // const { data, error, isLoading } = useGetProductsQuery(undefined);
+  const { data, error, isLoading } = useGetProductsQuery(undefined, {
+    pollingInterval: 1000,
+  });
 
   if (isLoading) {
     return (
@@ -39,7 +42,7 @@ const FeaturedProducts = () => {
             return (
               <div
                 key={product._id}
-                className="border-gray-200 bg-gradient-to-r  from-[#4A249D] to-[#927cc4]  border p-4 rounded-lg"
+                className="border-gray-200 bg-[#dbd3eb]  border p-4 rounded-lg"
               >
                 <Badge className="relative hover:text-white md:left-44 top-8 text-lg m-2 rounded-full text-black bg-[#F0D133]  ">
                   ${product?.price}
@@ -50,7 +53,7 @@ const FeaturedProducts = () => {
                   alt=""
                 />
 
-                <div className="flex p-1 mb-2 items-center justify-between text-[#F0D133]">
+                <div className="flex p-1 mb-2 items-center justify-between text-[#34196e]">
                   <h2 className="text-center font-medium text-xl">
                     {product?.brand}
                   </h2>
@@ -58,24 +61,24 @@ const FeaturedProducts = () => {
                     {/* @ts-expect-error: Type issue with Rating component */}
                     <Rating
                       initialRating={product?.rating}
-                      emptySymbol={<FaStar className="text-gray-300 " />}
-                      fullSymbol={<FaStar className="text-[#F0D133]" />}
+                      emptySymbol={<FaStar className="text-gray-300 text-lg" />}
+                      fullSymbol={<FaStar className="text-[#34196e] text-lg" />}
                       fractions={2}
                       readonly
                     />
                   </div>
                 </div>
-                <h2 className=" text-white mb-1 font-normal text-left text-lg">
+                <h2 className=" text-[#34196e] mb-1 font-normal text-left text-lg">
                   {product?.title}
                 </h2>
                 <div className="flex items-center justify-between">
-                  <h2 className="text-white font-normal text-left text-lg">
+                  <h2 className="text-[#34196e] font-normal text-left text-lg">
                     Quantity:
-                    <span className="text-[#F0D133]"> {product?.quantity}</span>
+                    <span className="font-medium"> {product?.quantity}</span>
                   </h2>
                   <NavLink
                     to={`/product/${product?._id}`}
-                    className="bg-[#F0D133]  hover:text-white hover:bg-[#4A249D] text-lg  font-medium px-3 py-2 rounded-lg"
+                    className="bg-[#F0D133]  hover:border text-lg  font-medium px-3 py-2 rounded-lg"
                   >
                     Details
                   </NavLink>

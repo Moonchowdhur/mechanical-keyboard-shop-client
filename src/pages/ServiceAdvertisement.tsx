@@ -54,16 +54,10 @@ const ServiceAdvertisement = () => {
       </div>
       {/* card */}
       <div className="md:flex mt-10 items-center gap-5">
-        {/* <div className="">
-          <MdLocalShipping className=" mb-2 text-3xl" />
-          <h2 className=" mb-1 text-lg font-medium ">Free Shpping </h2>
-          <h2 className=" mb-2 text-base font-medium text-gray-400">
-            Order Below $500
-          </h2>
-        </div> */}
+    
         {ServiceFeatures.map((service: Tservice, index: number) => (
-          <div key={index} className="text-center bg-slate-100 rounded-md p-3 ">
-            <div className="flex items-center justify-center">
+          <div key={index} className="text-center bg-slate-100 mt-4 md:mt-0 rounded-md p-3 ">
+            <div className="flex items-center  justify-center">
               <service.icon className="mb-2 text-center text-3xl" />
             </div>
 
