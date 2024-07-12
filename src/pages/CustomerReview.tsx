@@ -2,47 +2,47 @@ import { useState } from "react";
 
 const testimonials = [
   {
-    image: "https://i.ibb.co/KjDVMKQ/glorious.jpg",
+    image: "https://i.ibb.co/8bFnGsf/photo-1507003211169-0a1dd7228f2d.jpg",
     name: "John Doe",
     review:
       "Keyboard Repair Service provided excellent service! My keyboard is working perfectly now.",
   },
   {
-    image: "https://i.ibb.co/KjDVMKQ/glorious.jpg",
+    image: "https://i.ibb.co/nQgzmys/photo-1506277886164-e25aa3f4ef7f.jpg",
     name: "Jane Smith",
     review: "Fast and reliable service. Highly recommend for repairs!",
   },
   {
-    image: "https://i.ibb.co/KjDVMKQ/glorious.jpg",
+    image: "https://i.ibb.co/2MTGttP/photo-1618306842557-a2515acf2112.jpg",
     name: "Alice Johnson",
     review:
       "Affordable pricing and great customer support. Will definitely use their service again.",
   },
   {
-    image: "https://i.ibb.co/KjDVMKQ/glorious.jpg",
+    image: "https://i.ibb.co/8bFnGsf/photo-1507003211169-0a1dd7228f2d.jpg",
     name: "Robert Brown",
     review: "Quick turnaround time and very professional. Highly satisfied!",
   },
   {
-    image: "https://i.ibb.co/KjDVMKQ/glorious.jpg",
+    image: "https://i.ibb.co/nQgzmys/photo-1506277886164-e25aa3f4ef7f.jpg",
     name: "Emily White",
     review:
       "Exceptional service and knowledgeable staff. My keyboard is as good as new!",
   },
   {
-    image: "https://i.ibb.co/KjDVMKQ/glorious.jpg",
+    image: "https://i.ibb.co/2MTGttP/photo-1618306842557-a2515acf2112.jpg",
     name: "Michael Green",
     review:
       "They fixed my keyboard in no time. Great job and reasonable prices!",
   },
   {
-    image: "https://i.ibb.co/KjDVMKQ/glorious.jpg",
+    image: "https://i.ibb.co/8bFnGsf/photo-1507003211169-0a1dd7228f2d.jpg",
     name: "Sarah Wilson",
     review:
       "Very friendly service and excellent repair quality. Will come back for sure.",
   },
   {
-    image: "https://i.ibb.co/KjDVMKQ/glorious.jpg",
+    image: "https://i.ibb.co/2MTGttP/photo-1618306842557-a2515acf2112.jpg",
     name: "David Johnson",
     review:
       "Highly recommend for any keyboard issues. They know what they're doing!",
@@ -88,7 +88,11 @@ const CustomerReview = () => {
                 >
                   <div className="bg-[#dbd3eb]  rounded-lg shadow-lg p-6 flex flex-col items-center">
                     <div className="flex w-full justify-start mb-5 ">
-                      <img src="https://i.ibb.co/4K88pCD/quotes.png" className="w-7 h-7" alt="" />
+                      <img
+                        src="https://i.ibb.co/4K88pCD/quotes.png"
+                        className="w-7 h-7"
+                        alt=""
+                      />
                     </div>
                     <img
                       src={testimonial.image}
@@ -102,7 +106,11 @@ const CustomerReview = () => {
                       {testimonial.review}
                     </p>
                     <div className="flex w-full justify-end mt-5 ">
-                      <img src="https://i.ibb.co/pRQRCWf/quote.png" className="w-9 h-9" alt="" />
+                      <img
+                        src="https://i.ibb.co/pRQRCWf/quote.png"
+                        className="w-9 h-9"
+                        alt=""
+                      />
                     </div>
                   </div>
                 </div>
