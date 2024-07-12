@@ -14,25 +14,27 @@ import { useEffect, useState } from "react";
 
 const Cart = () => {
   const cartItems = useAppSelector((state) => state.cart.items);
-  const { data: products, isLoading } = useGetProductsQuery(undefined);
+  const { data: products, isLoading } = useGetProductsQuery(undefined, {
+    pollingInterval: 1000,
+  });
   const { totalOrderPrice } = useAppSelector((state) => state.cart);
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-
-  console.log(isButtonDisabled);
 
   const navigate = useNavigate();
 
   useEffect(() => {
     if (isLoading) return;
 
+
     // Check stock availability
     const outOfStockItems = cartItems.filter((cartItem) => {
       const product = products.data.find(
         (item: any) => item._id === cartItem._id
       );
-      return product ? cartItem.quantity > product.quantity : true;
-    });
 
+      return product ? cartItem.cartQuantity > product.quantity : true;
+    });
+    console.log(outOfStockItems, "outOfStockItems");
     setIsButtonDisabled(outOfStockItems.length > 0);
   }, [cartItems, products, isLoading]);
 
