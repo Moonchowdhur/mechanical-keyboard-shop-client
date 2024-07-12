@@ -25,10 +25,6 @@ const keyboardBrands = [
     image:
       "https://i.ibb.co/jw7SVSw/How-to-Clean-a-Computer-Keyboard1646149371308147.jpg",
   },
-  //   {
-  //     name: "SteelSeries",
-  //     image: "https://i.ibb.co/hYzct7C/steel-Series.png",
-  //   },
 ];
 
 const CarouselImage = () => {
@@ -55,10 +51,11 @@ const CarouselImage = () => {
                       <span className="text-[#a58a00]">Keyboard</span> Repair
                     </h2>
                     <h2 className="font-normal mb-2 text-lg">
-                      Explore <span>{brand.name}</span> wide range of keyboards.
-                      Whether you are a gamer, content creator, or professional,
-                      Logitech offers cutting-edge technology to enhance your
-                      computing experience.
+                      Explore{" "}
+                      <span className="text-[#695802] font-medium tracking-wide">{brand.name}</span> wide
+                      range of keyboards. Whether you are a gamer, content
+                      creator, or professional, Logitech offers cutting-edge
+                      technology to enhance your computing experience.
                     </h2>
                     {/* button */}
                     <div className="flex mt-4 gap-6 items-center">

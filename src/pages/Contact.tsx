@@ -86,29 +86,29 @@ const Contact = () => {
       </div>
       <div className="md:grid-cols-4 grid-cols-1 grid  mx-3 items-center mt-10 gap-5">
         {/* cart */}
-        <div className="text-center rounded-md p-3 ">
-          <div className="flex bg-[#dbd3eb] rounded-full mx-auto w-20 h-20 items-center justify-center">
+        <div className="text-center rounded-md p-3  ">
+          <div className="flex bg-[#dbd3eb] animate-bounce rounded-full mx-auto w-20 h-20 items-center justify-center">
             <FaMapMarkerAlt className="mb-2 text-center text-black text-3xl" />
           </div>
           <h2 className="mb-1 text-lg font-medium">Address</h2>
           <p className="mb-2 text-base">73 Canal Street, Kolkata</p>
         </div>
         <div className="text-center rounded-md p-3 ">
-          <div className="flex bg-[#dbd3eb] rounded-full mx-auto w-20 h-20 items-center justify-center">
+          <div className="flex bg-[#dbd3eb]  animate-bounce  rounded-full mx-auto w-20 h-20 items-center justify-center">
             <MdAccessTimeFilled className="mb-2 text-center text-black text-4xl" />
           </div>
           <h2 className="mb-1 text-lg font-medium">OPENING HOURS</h2>
           <p className="mb-2 lg">Monday-Saturday: 8:00AM-9:00PM</p>
         </div>
         <div className="text-center rounded-md p-3 ">
-          <div className="flex bg-[#dbd3eb] rounded-full mx-auto w-20 h-20 items-center justify-center">
+          <div className="flex bg-[#dbd3eb]  animate-bounce  rounded-full mx-auto w-20 h-20 items-center justify-center">
             <IoCall className="mb-2 text-center text-black text-3xl" />
           </div>
           <h2 className="mb-1 text-lg font-medium">PHONE NUMBER</h2>
           <p className="mb-2 text-base">(+8777090567)</p>
         </div>
         <div className="text-center rounded-md p-3 ">
-          <div className="flex bg-[#dbd3eb] rounded-full mx-auto w-20 h-20 items-center justify-center">
+          <div className="flex  animate-bounce  bg-[#dbd3eb] rounded-full mx-auto w-20 h-20 items-center justify-center">
             <MdEmail className="mb-2 text-center text-black text-3xl" />
           </div>
           <h2 className="mb-1 text-lg font-medium">EMAIL</h2>

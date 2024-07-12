@@ -79,7 +79,7 @@ const CheckOut = () => {
   };
 
   return (
-    <div className="md:px-12 w-full  p-4 mt-36  md:mt-12  rounded-md ">
+    <div className="md:px-12 w-full  p-4 mt-40  md:mt-12  rounded-md ">
       <div className="flex mx-1 justify-center ">
         {errorMessage && (
           <h2 className="text-center  text-xl font-medium text-red-600">

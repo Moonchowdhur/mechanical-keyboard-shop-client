@@ -65,7 +65,7 @@ const AllProduct = () => {
       <div className="border px-4 justify-between border-[#4A249D] md:flex border-l-0 border-r-0 mt-6 bg-[#ede9f5] pb-6">
         <div className="md:w-9/12 flex items-center gap-5">
           <button
-            className="border px-4 py-2 mt-3 rounded-lg hover:bg-[#4A249D] hover:text-white border-[#4A249D] text-lg font-medium "
+            className="border p-5 md:px-4 md:py-2 mt-3 rounded-lg hover:bg-[#4A249D] hover:text-white border-[#4A249D] text-lg font-medium "
             onClick={() => {
               setFilterPrice("");
               setSort("");
@@ -75,17 +75,6 @@ const AllProduct = () => {
             Reset
           </button>
           <SortByPriceProduct onSortChange={setSort} />
-          {/* <div className="w-2/12 mt-2">
-            <h2 className="mb-2 text-lg">Filter by price</h2>
-            <Slider
-              // @ts-expect-error: Unreachable code error
-              defaultValue={filterPrice}
-              // @ts-expect-error: Unreachable code error
-              onChange={(value) => setFilterPrice(value)}
-              max={1000}
-              step={1}
-            />
-          </div> */}
 
           <FilterByPriceProduct onFilterChange={setFilterPrice} />
         </div>

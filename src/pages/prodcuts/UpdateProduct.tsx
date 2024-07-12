@@ -63,13 +63,12 @@ const UpdateProduct = ({ product }: any) => {
     const quan = parseFloat(quantity);
     const priceValue = parseFloat(price);
     const rate = parseFloat(rating);
-    // const description = e.target.description.value;
 
     const data = {
       title: title ? title : ttl,
       image: image ? image : img,
       brand: brand ? brand : brandy,
-      quantity: quan ? quan : quanti,
+      quantity: quan !== undefined && !isNaN(quan) ? quan : quanti,
       price: priceValue ? priceValue : pri,
       rating: rate ? rate : rati,
       description: description ? description : desc,

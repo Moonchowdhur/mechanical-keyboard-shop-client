@@ -26,8 +26,6 @@ export type TTodoCartProps = {
   };
 };
 
-
-
 const SingleCart = ({ cart }: TTodoCartProps) => {
   console.log(cart);
   const dispatch = useAppDispatch();
@@ -76,7 +74,9 @@ const SingleCart = ({ cart }: TTodoCartProps) => {
         {cart.cartQuantity}
       </TableCell>
 
-      <TableCell className="text-center text-base">${cart.price}</TableCell>
+      <TableCell className="text-center text-base">
+        ${(cart?.cartQuantity * cart?.price).toFixed(2)}
+      </TableCell>
       <TableCell className="text-center text-base">
         <div className="px-2 py-1 rounded-md flex items-center w-full  border border-[#4A249D]">
           <FaPlusCircle

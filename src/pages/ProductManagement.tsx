@@ -38,9 +38,7 @@ const ProductManagement = () => {
   return (
     <div className="md:px-12 w-full p-4 mt-28 md:mt-12 rounded-md ">
       <div className="flex justify-between mb-5">
-      
-        <AddProduct/>
-     
+        <AddProduct />
       </div>
       <div className="bg-[#dbd3eb]  w-full h-full space-y-3 rounded-xl p-[5px] ">
         <div className="bg-white rounded-md p-4  space-y-3  w-full h-full ">
@@ -48,7 +46,7 @@ const ProductManagement = () => {
             <TableHeader>
               <TableRow className="rounded-lg">
                 <TableHead className="bg-[#dbd3eb] text-lg w-3/12  text-center">
-                  Title
+                  Name
                 </TableHead>
                 <TableHead className="bg-[#dbd3eb] text-lg w-3/12 text-center">
                   Image
