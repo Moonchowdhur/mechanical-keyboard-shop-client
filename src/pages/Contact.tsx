@@ -17,8 +17,8 @@ const Contact = () => {
               <div className="bg-[#957c00] text-center h-2 w-11 rounded-lg "></div>
             </div>
             <h2 className=" tracking-widest mb-7  w-8/12 mx-auto">
-              2,Ananda Mohan Bose Road, Sibitra Pally, Shymbazar Road,
-              Dharmatala, Kolkata-700030
+              73 Canal Street, Sibitra Pally, Shymbazar Road, Dharmatala,
+              Kolkata-700030
             </h2>
             <img
               src="https://i.ibb.co/DrrtPmx/googl-ED.jpg"

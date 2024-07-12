@@ -82,20 +82,23 @@ const UpdateProduct = ({ product }: any) => {
     // console.log(data);
     // updateProduct(options);
 
-    const response = await updateProduct(options).unwrap();
+    try {
+      const response = await updateProduct(options).unwrap();
 
-    console.log(response);
+      console.log(response);
 
-    if (response?.success === true) {
-      swal({
-        title: "Product Updated",
-        text: "Successfull",
-        icon: "success",
-        // @ts-expect-error: Unreachable code error
-        button: "Done",
-      });
+      if (response?.success === true) {
+        swal({
+          title: "Product Updated",
+          text: "Successfull",
+          icon: "success",
+          // @ts-expect-error: Unreachable code error
+          button: "Done",
+        });
+      }
+    } catch (error) {
+      console.error("Failed to update product", error);
     }
-
   };
 
   return (
