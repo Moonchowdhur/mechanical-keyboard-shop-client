@@ -55,7 +55,7 @@ const ServiceAdvertisement = () => {
       {/* card */}
       <div className="md:flex mt-10 items-center gap-5">
     
-        {ServiceFeatures.map((service: Tservice, index: number) => (
+        {ServiceFeatures?.map((service: Tservice, index: number) => (
           <div key={index} className="text-center bg-slate-100 mt-4 md:mt-0 rounded-md p-3 ">
             <div className="flex items-center  justify-center">
               <service.icon className="mb-2 text-center text-3xl" />

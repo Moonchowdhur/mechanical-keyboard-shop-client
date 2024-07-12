@@ -41,7 +41,7 @@ const KeyboardImportance = () => {
       </div>
 
       <div className="md:flex gap-5 mt-10">
-        {features.map((feature, index) => (
+        {features?.map((feature, index) => (
           <div key={index} className="text-center bg-slate-100 rounded-md p-3 ">
             <div className="flex items-center justify-center">
               <feature.icon className="mb-2 text-center text-3xl" />

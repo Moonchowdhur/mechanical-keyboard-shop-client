@@ -22,7 +22,7 @@ const FilterByPriceProduct = ({ onFilterChange }: any) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <div className="flex gap-1 items-center  mt-3 mx-3 md:w-2/12">
+        <div className="flex gap-1 items-center  mt-3 mx-3 md:w-3/12">
           <button className="text-[#4A249D] hover:bg-[#4A249D] hover:text-white text-center border px-3 py-2 font-medium rounded-lg border-[#4A249D] flex items-center justify-center gap-1  text-lg">
             <div className="flex items-center gap-2">
               <h2 className=" text-lg">Filter By Price</h2>

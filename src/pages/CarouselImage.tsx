@@ -36,7 +36,7 @@ const CarouselImage = () => {
     <div className="md:px-12 w-full ">
       <Carousel>
         <CarouselContent>
-          {keyboardBrands.map((brand) => (
+          {keyboardBrands?.map((brand) => (
             <CarouselItem key={brand.name}>
               <div className="bg-[#dbd3eb] p-4 mt-16 rounded-md md:flex items-center justify-between">
                 {/* content */}

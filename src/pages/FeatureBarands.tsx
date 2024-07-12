@@ -46,7 +46,7 @@ const FeatureBarands = () => {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 mt-10">
-        {brands.map((brand, index) => (
+        {brands?.map((brand, index) => (
           <div
             key={index}
             data-aos="fade-up"

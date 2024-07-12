@@ -80,7 +80,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="md:px-12 w-full p-4 mt-12  rounded-md ">
+    <div className="md:px-12 w-full p-4 mt-36 nd:mt-12  rounded-md ">
       <div className="md:flex items-start gap-8  ">
         <div className="md:w-1/2 w-full rounded-lg   p-4">
           <div className=" w-full ">

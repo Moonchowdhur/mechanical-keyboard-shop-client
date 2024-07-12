@@ -43,7 +43,7 @@ const CheckOut = () => {
   const handlePlaceOrder = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const products = cartItems.map((item) => ({
+    const products = cartItems?.map((item) => ({
       product: item._id,
       quantity: item.cartQuantity,
     }));
@@ -77,11 +77,11 @@ const CheckOut = () => {
   };
 
   return (
-    <div className="md:px-12 w-full  p-4 mt-12  rounded-md ">
+    <div className="md:px-12 w-full  p-4 mt-36  md:mt-12  rounded-md ">
       <div className="flex mx-1 justify-center ">
         {errorMessage && (
           <h2 className="text-center  text-xl font-medium text-red-600">
-            Error:{errorMessage}
+            Error:{errorMessage}, please fill all field
           </h2>
         )}
       </div>

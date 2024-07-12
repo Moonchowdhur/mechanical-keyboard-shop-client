@@ -1,39 +1,44 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
+import swal from "sweetalert";
+import { useEffect } from "react";
 import MaInLayout from "./components/layout/MaInLayout";
+import { useAppSelector } from "./redux/hooks/hook";
 
 const App = () => {
-  // prevent cart data
-  // useEffect(() => {
-  //   const handleBeforeUnload = (event: any) => {
-  //     // Cancel the event
-  //     event.preventDefault();
-  //     // Chrome requires returnValue to be set
-  //     event.returnValue = "";
+  const cartItems = useAppSelector((state) => state.cart.items);
 
-  //     // Show SweetAlert
-  //     swal({
-  //       title: "Are you sure?",
-  //       text: "You may lose your cart data if you reload the page.",
-  //       icon: "warning",
-  //       buttons: ["Cancel", "Reload Anyway"],
-  //       dangerMode: true,
-  //     }).then((willReload) => {
-  //       if (willReload) {
-  //         // User clicked "Reload Anyway", allow reload
-  //         window.location.reload();
-  //       }
-  //     });
-  //     return "";
-  //   };
-  //   // Attach event listener
-  //   window.addEventListener("beforeunload", handleBeforeUnload);
+  useEffect(() => {
+    const handleBeforeUnload = (event: any) => {
+      if (cartItems.length > 0) {
+        event.preventDefault();
+        event.returnValue = ""; // Chrome requires returnValue to be set
+        swal({
+          title: "Are you sure?",
+          text: "You have items in your cart. Are you sure you want to leave?",
+          icon: "warning",
+          buttons: ["Cancel", "Reload"],
+          dangerMode: true,
+        }).then((willLeave) => {
+          if (willLeave) {
+            swal("Your cart items is blank, please add!", {
+              icon: "success",
+            }).then(() => {
+              window.removeEventListener("beforeunload", handleBeforeUnload);
+              window.location.reload(); // Proceed with reload
+            });
+          } else {
+            swal("Your cart items are safe!");
+          }
+        });
+      }
+    };
 
-  //   // Cleanup the event listener
-  //   return () => {
-  //     window.removeEventListener("beforeunload", handleBeforeUnload);
-  //   };
-  // }, []);
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, [cartItems]);
 
   return (
     <div>

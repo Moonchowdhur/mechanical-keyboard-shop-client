@@ -9,16 +9,16 @@ import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="bg-[#dbd3eb] md:px-12 w-full mt-16 p-4 md:mt-20 rounded-md">
+    <div className="bg-[#dbd3eb] md:px-12 w-full mt-20 p-4 md:mt-30 rounded-md">
       <footer className="footer flex flex-col md:flex-row justify-between items-start">
-        <div className="flex flex-col items-start">
+        <div className="flex flex-col mx-4 md:mx-0  items-start">
           <div className="flex items-center gap-3">
             <img
               src="https://i.ibb.co/7Y3rTBz/yaroslav-kolodiy-6qx-THv-BUq-Eg-unsplash.jpg"
               alt="Instrument Academy"
               className="w-10 h-10 rounded-full"
             />
-            <span className="footer-title text-3xl font-bold">
+            <span className="footer-title text-2xl md:text-3xl font-bold">
               Mechanical Keyboard Shop
             </span>
           </div>
@@ -38,8 +38,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row md:gap-20 w-full md:w-auto">
-          <div className="mt-4 md:mt-0">
+        <div className="flex mx-4 md:mx-0  flex-col md:flex-row md:gap-20 w-full md:w-auto">
+          <div className="mt-4  md:mt-0">
             <span className="footer-title text-xl">About</span>
             <ul className="mt-2">
               <li>
@@ -86,7 +86,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-4 md:mt-0">
+        <div className="mt-4 mx-4 md:mx-0  md:mt-0">
           <span className="footer-title text-xl">Contact Us</span>
           <div className="mt-2">
             <div className="flex items-center gap-2">

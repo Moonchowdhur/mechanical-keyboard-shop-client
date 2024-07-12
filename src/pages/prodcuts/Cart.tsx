@@ -41,7 +41,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="md:px-12 w-full p-4 mt-12  rounded-md ">
+    <div className="md:px-12 w-full p-4 mt-40 md:mt-12  rounded-md ">
       <div>
         {cartItems.length > 0 && (
           <h2 className="text-3xl tracking-widest mb-7 font-bold text-center">

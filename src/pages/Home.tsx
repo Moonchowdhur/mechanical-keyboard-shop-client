@@ -8,7 +8,7 @@ import ServiceAdvertisement from "./ServiceAdvertisement";
 
 const Home = () => {
   return (
-    <div>
+    <div className="mt-28 md:mt-0">
       <CarouselImage></CarouselImage>
       <ServiceAdvertisement />
       <FeaturedProducts />

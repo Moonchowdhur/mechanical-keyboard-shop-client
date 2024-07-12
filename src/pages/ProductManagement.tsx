@@ -36,7 +36,7 @@ const ProductManagement = () => {
   console.log(products);
 
   return (
-    <div className="md:px-12 w-full p-4 mt-12 rounded-md ">
+    <div className="md:px-12 w-full p-4 mt-28 md:mt-12 rounded-md ">
       <div className="flex justify-between mb-5">
       
         <AddProduct/>

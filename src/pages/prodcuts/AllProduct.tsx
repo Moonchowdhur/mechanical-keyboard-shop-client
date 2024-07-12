@@ -9,14 +9,20 @@ import { FaSearch } from "react-icons/fa";
 import SortByPriceProduct from "./SortByPriceProduct";
 import FilterByPriceProduct from "./FilterByPriceProduct";
 import { useState } from "react";
+import useDebounce from "@/redux/hooks/useDebounce";
 
 const AllProduct = () => {
   const [filterPrice, setFilterPrice] = useState("");
   const [sort, setSort] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
 
+  // Debounce the search term with a delay of 500ms
+  const debouncedSearchTerm = useDebounce(searchTerm, 1000);
+
+  console.log(debouncedSearchTerm, "debouncedSearchTerm");
+
   const filters = {
-    searchTerm,
+    searchTerm: debouncedSearchTerm,
     sort,
     priceRange: filterPrice,
   };
@@ -35,7 +41,7 @@ const AllProduct = () => {
   console.log(data);
 
   return (
-    <div className="md:px-12 w-full p-4 mt-12 rounded-md ">
+    <div className="md:px-12  w-full p-4 mt-40 md:mt-12 rounded-md ">
       {/* search item */}
       <div className=" pb-10  flex justify-end ">
         <div className="flex rounded-2xl p-1 md:w-3/12 items-center bg-[#dbd3eb]  border-[#4A249D]">
@@ -92,7 +98,7 @@ const AllProduct = () => {
           {/* card */}
 
           {data?.data.length > 0 &&
-            data?.data.map((product: any) => {
+            data?.data?.map((product: any) => {
               return (
                 <div
                   key={product._id}

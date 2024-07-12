@@ -38,7 +38,7 @@ const FeaturedProducts = () => {
         <div className="grid md:grid-cols-3 grid-cols-1 gap-5  justify-between items-center mt-10 rounded-lg">
           {/* card */}
 
-          {displayedProducts.map((product: any) => {
+          {displayedProducts?.map((product: any) => {
             return (
               <div
                 key={product._id}

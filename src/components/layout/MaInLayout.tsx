@@ -5,7 +5,10 @@ const MaInLayout = () => {
   return (
     <div className="">
       <Navbar />
-      <Outlet></Outlet>
+      <div className="md:min-h-[calc(100vh-70px)]">
+        <Outlet></Outlet>
+      </div>
+
       <Footer />
     </div>
   );

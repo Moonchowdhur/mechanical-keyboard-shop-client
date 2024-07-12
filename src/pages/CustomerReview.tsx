@@ -81,7 +81,7 @@ const CustomerReview = () => {
               className="flex  transition-transform ease-out duration-300"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              {testimonials.map((testimonial, index) => (
+              {testimonials?.map((testimonial, index) => (
                 <div
                   key={index}
                   className="min-w-full  flex justify-center p-4"

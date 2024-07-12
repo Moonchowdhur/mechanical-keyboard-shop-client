@@ -29,7 +29,7 @@ const Navbar = () => {
         <ul
           className={`md:flex gap-8 z-10 md:bg-transparent text-white  font-medium md:static absolute text-xl items-center ${
             open
-              ? "top-20 right-7 p-3 bg-[#736100] text-black"
+              ? "top-20 right-7 p-3 bg-[#695802]  text-black"
               : "-top-48 right-0"
           } `}
         >

@@ -38,7 +38,6 @@ const UpdateProduct = ({ product }: any) => {
   const [rating, setRating] = useState("");
   const [description, setDescription] = useState("");
 
-
   console.log({ data, error, isSuccess, isLoading });
   let errorMessage: string | null = null;
   // @ts-expect-error: Unreachable code error
@@ -48,8 +47,6 @@ const UpdateProduct = ({ product }: any) => {
   }
 
   console.log({ errorMessage });
-
-
 
   const onSubmit = (e: any) => {
     e.preventDefault();
@@ -76,8 +73,8 @@ const UpdateProduct = ({ product }: any) => {
     console.log(data);
     updateProduct(options);
 
-
-    if (data !== undefined) {
+    // @ts-expect-error: Unreachable code error
+    if (data?.success === true) {
       swal({
         title: "Product Updated",
         text: "Successfull",
