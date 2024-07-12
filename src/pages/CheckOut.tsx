@@ -14,6 +14,8 @@ const CheckOut = () => {
   const navigate = useNavigate();
   const [addOrder, { data, error }] = useAddOrdersMutation();
 
+  console.log(cartItems);
+
   let errorMessage: string | null = null;
   // @ts-expect-error: Unreachable code error
   if (error?.data?.message) {
@@ -59,7 +61,7 @@ const CheckOut = () => {
 
       if (res?.success === true) {
         swal({
-          title: "Product added!",
+          title: "Product Confirmed!",
           text: "Successfull",
           icon: "success",
           // @ts-expect-error: Unreachable code error
@@ -67,7 +69,7 @@ const CheckOut = () => {
         });
       }
       //cart clr
-      dispatch(clearCart()); 
+      dispatch(clearCart());
       navigate("/orderconfirmed");
       // Add any additional success handling here
     } catch (error) {

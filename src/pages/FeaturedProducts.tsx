@@ -44,7 +44,7 @@ const FeaturedProducts = () => {
                 key={product._id}
                 className="border-gray-200 bg-[#dbd3eb]  border p-4 rounded-lg"
               >
-                <Badge className="relative hover:text-white md:left-44 top-8 text-lg m-2 rounded-full text-black bg-[#F0D133]  ">
+                <Badge className="relative hover:text-white md:left-40 top-8 text-lg m-2 rounded-full text-black bg-[#F0D133]  ">
                   ${product?.price}
                 </Badge>
                 <img

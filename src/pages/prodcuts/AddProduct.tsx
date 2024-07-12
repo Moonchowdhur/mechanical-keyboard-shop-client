@@ -35,7 +35,7 @@ const AddProduct = () => {
 
   console.log({ data, isSuccess, errorMessage, isLoading });
 
-  const onSubmit = (e: any) => {
+  const onSubmit =async (e: any) => {
     e.preventDefault();
 
     const quan = parseFloat(quantity);
@@ -53,9 +53,13 @@ const AddProduct = () => {
       description,
     };
 
-    addProduct(data);
-    // @ts-expect-error: Unreachable code error
-    if (data?.success === true) {
+    // addProduct(data);
+
+    const response = await addProduct(data).unwrap();
+
+    console.log(response);
+
+    if (response?.success === true) {
       swal({
         title: "Product added!",
         text: "Successfull",

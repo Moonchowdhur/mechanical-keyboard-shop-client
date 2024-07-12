@@ -48,8 +48,17 @@ const UpdateProduct = ({ product }: any) => {
 
   console.log({ errorMessage });
 
-  const onSubmit = (e: any) => {
+  const onSubmit = async (e: any) => {
     e.preventDefault();
+
+    // Clear the input fields
+    setTitle("");
+    setImage("");
+    setBrand("");
+    setQuantity("");
+    setPrice("");
+    setRating("");
+    setDescription("");
 
     const quan = parseFloat(quantity);
     const priceValue = parseFloat(price);
@@ -70,11 +79,14 @@ const UpdateProduct = ({ product }: any) => {
       data,
     };
 
-    console.log(data);
-    updateProduct(options);
+    // console.log(data);
+    // updateProduct(options);
 
-    // @ts-expect-error: Unreachable code error
-    if (data?.success === true) {
+    const response = await updateProduct(options).unwrap();
+
+    console.log(response);
+
+    if (response?.success === true) {
       swal({
         title: "Product Updated",
         text: "Successfull",
@@ -83,6 +95,7 @@ const UpdateProduct = ({ product }: any) => {
         button: "Done",
       });
     }
+
   };
 
   return (
@@ -94,7 +107,7 @@ const UpdateProduct = ({ product }: any) => {
       </DialogTrigger>
       <div className="flex mx-1 justify-center ">
         {errorMessage && (
-          <h2 className="text-center  text-xl font-medium text-red-600">
+          <h2 className="text-center text-base font-medium text-red-600">
             Error:{errorMessage}, Please give valid input
           </h2>
         )}

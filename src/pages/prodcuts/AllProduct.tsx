@@ -16,7 +16,7 @@ const AllProduct = () => {
   const [sort, setSort] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Debounce the search term with a delay of 500ms
+  // Debounce the search term with a delay of 1sec
   const debouncedSearchTerm = useDebounce(searchTerm, 1000);
 
   console.log(debouncedSearchTerm, "debouncedSearchTerm");
@@ -104,7 +104,7 @@ const AllProduct = () => {
                   key={product._id}
                   className="border-gray-200  bg-[#dbd3eb]  border p-4 rounded-lg"
                 >
-                  <Badge className="relative hover:text-white md:left-80 top-8 text-lg m-2 rounded-full text-black bg-[#F0D133]  ">
+                  <Badge className="relative hover:text-white md:left-72 top-8 text-lg m-2 rounded-full text-black bg-[#F0D133]  ">
                     ${product?.price}
                   </Badge>
                   <img

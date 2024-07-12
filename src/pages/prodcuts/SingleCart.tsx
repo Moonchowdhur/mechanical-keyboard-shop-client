@@ -26,6 +26,8 @@ export type TTodoCartProps = {
   };
 };
 
+
+
 const SingleCart = ({ cart }: TTodoCartProps) => {
   console.log(cart);
   const dispatch = useAppDispatch();
@@ -33,7 +35,6 @@ const SingleCart = ({ cart }: TTodoCartProps) => {
   const handleDelete = (cartId: string) => {
     swal({
       title: "Remove from cart",
-      //   text: "Once deleted, you will not be able to recover this product data!",
       icon: "warning",
       // @ts-expect-error: Unreachable code error
       buttons: true,
