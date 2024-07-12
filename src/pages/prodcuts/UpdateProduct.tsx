@@ -79,7 +79,6 @@ const UpdateProduct = ({ product }: any) => {
       data,
     };
 
-    // console.log(data);
     // updateProduct(options);
 
     try {
