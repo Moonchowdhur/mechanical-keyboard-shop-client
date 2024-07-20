@@ -7,6 +7,7 @@ import {
 } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 
+
 const Footer = () => {
   return (
     <div className="bg-[#dbd3eb] md:px-12 w-full mt-20 p-4 md:mt-30 rounded-md">

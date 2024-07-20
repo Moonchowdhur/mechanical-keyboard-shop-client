@@ -4,8 +4,6 @@
 
 # Live URL
 
-- https://redux-assignment-client-khaki.vercel.app/
-
 # How to run the project in locally
 
 To run the project locally, follow these steps:

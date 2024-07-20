@@ -44,7 +44,7 @@ const FeatureBarands = () => {
       <div className="flex justify-center mt-2">
         <div className="h-2 w-12  rounded-lg text-center bg-[#4A249D]"></div>
       </div>
-
+      {/* all brands */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 mt-10">
         {brands?.map((brand, index) => (
           <div
